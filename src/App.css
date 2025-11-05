@@ -1,0 +1,376 @@
+/* Reset and base layout */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden; /* stop sideways scroll */
+  font-size: 18px; /* overall base font size increased */
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #eef2f8;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* App container */
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* Header */
+.header {
+  width: 100%;
+  background: linear-gradient(90deg, #84d9d2, #97b6f4);
+  padding: 25px 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15);
+}
+
+.header h1 {
+  font-size: 2rem; /* larger title */
+  color: #333;
+}
+
+.header nav {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.header nav button {
+  background: #ffffff;
+  border: none;
+  color: #333;
+  padding: 12px 24px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.header nav button:hover {
+  background: #e5f3ff;
+}
+
+/* Main content */
+.main {
+  width: 85vw; /* 85% of screen width for desktops */
+  max-width: 800px; /* won’t exceed this on large monitors */
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 2vw; /* responsive side padding */
+  transition: all 0.3s ease;
+}
+
+
+/* Post Form */
+.post-form {
+  width: 100%;
+  background: #fff;
+  padding: 35px;
+  border-radius: 20px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  margin-bottom: 30px;
+}
+
+.post-form h2 {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 25px;
+  color: #222;
+}
+
+.post-form textarea {
+  width: 100%;
+  height: 140px;
+  border-radius: 12px;
+  border: 1px solid #bbb;
+  padding: 15px;
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+  resize: none;
+}
+
+/* Image inputs */
+.image-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.file-btn {
+  background: #007bff;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1.1rem;
+}
+
+.file-btn input {
+  display: none;
+}
+
+.image-inputs input[type="text"] {
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  font-size: 1.05rem;
+}
+
+/* Preview image */
+.preview-image {
+  width: 100%;
+  border-radius: 12px;
+  margin: 15px 0;
+  object-fit: cover;
+}
+
+/* Post button */
+.post-form button {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  background: linear-gradient(90deg, #42e695, #3bb2b8);
+  color: #fff;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.post-form button:hover {
+  transform: scale(1.04);
+}
+
+/* Post Wall */
+.post-wall {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.post-wall h2 {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+}
+
+.back-btn {
+  align-self: flex-start;
+  background: #84d9d2;
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-bottom: 25px;
+  transition: 0.3s;
+}
+
+.back-btn:hover {
+  background: #68c7be;
+}
+
+/* Each Post */
+.social-post {
+  width: 100%;
+  background: #fff;
+  border-radius: 18px;
+  padding: 25px;
+  margin-bottom: 25px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.post-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.avatar {
+  width: 55px;
+  height: 55px;
+  background: #97b6f4;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+
+.user-details strong {
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.user-details small {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.post-image {
+  width: 100%;
+  border-radius: 14px;
+  margin: 15px 0;
+  object-fit: cover;
+}
+
+.post-text {
+  font-size: 1.1rem;
+  color: #444;
+  margin-top: 10px;
+}
+
+.post-actions {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.post-actions button {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: 0.3s;
+}
+
+.post-actions button:hover {
+  background: #005dc1;
+}
+
+/* Comment section */
+.comment-section {
+  display: flex;
+  margin-top: 15px;
+  gap: 10px;
+}
+
+.comment-section input {
+  flex: 1;
+  border: 1px solid #ccc;
+  border-radius: 25px;
+  padding: 10px 15px;
+  font-size: 1rem;
+}
+
+.comment-section button {
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 42px;
+  height: 42px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: 0.3s;
+}
+
+.comment-section button:hover {
+  background: #005dc1;
+}
+
+.comment-list {
+  margin-top: 15px;
+  padding-left: 20px;
+  list-style: none;
+  color: #333;
+  font-size: 1rem;
+}
+
+/* 📱 Responsive Design */
+@media (max-width: 1024px) {
+  html {
+    font-size: 17px;
+  }
+
+  .main {
+    max-width: 90%;
+  }
+
+  .post-form, .social-post {
+    padding: 25px;
+  }
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+  }
+
+  .main {
+    margin-top: 30px;
+    padding: 0 15px;
+  }
+
+  .post-form textarea {
+    height: 120px;
+  }
+
+  .avatar {
+    width: 50px;
+    height: 50px;
+  }
+
+  .post-actions button {
+    padding: 8px 15px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  html {
+    font-size: 15px;
+  }
+
+  .header {
+    padding: 15px;
+  }
+
+  .header h1 {
+    font-size: 1.5rem;
+  }
+
+  .post-form, .social-post {
+    padding: 20px;
+  }
+
+  .post-form textarea {
+    height: 100px;
+  }
+
+  .post-actions button {
+    font-size: 0.95rem;
+  }
+}
