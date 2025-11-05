@@ -1,0 +1,399 @@
+/* -----------------------------------------
+   Root Theme Colors (Modern Social Palette)
+------------------------------------------ */
+:root {
+  --primary: #0099ff;
+  --secondary: #12b76a;
+  --accent: #f97316;
+  --border: #e0e0e0;
+  --card-bg: #ffffff;
+  --bg-color: #f5f7fa;
+  --text-dark: #1f2937;
+  --text-light: #6b7280;
+  --gradient: linear-gradient(90deg, #00c6ff, #0072ff);
+}
+
+/* -----------------------------------------
+   Layout Containers
+------------------------------------------ */
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background: var(--bg-color);
+}
+
+.app-box {
+  background: var(--card-bg);
+  width: 100%;
+  max-width: 550px;
+  min-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  border-radius: 15px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+/* -----------------------------------------
+   Header / Navbar
+------------------------------------------ */
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--gradient);
+  padding: 0.9rem 1.2rem;
+  color: white;
+}
+
+.app-header h1 {
+  font-size: 1.25rem;
+  margin: 0;
+}
+
+.app-header nav button {
+  margin-left: 8px;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.app-header nav button:hover {
+  background-color: rgba(255, 255, 255, 0.35);
+}
+
+.app-header nav button.active {
+  background-color: white;
+  color: var(--primary);
+}
+
+/* -----------------------------------------
+   Scrollable Content Area
+------------------------------------------ */
+.content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1rem;
+}
+
+/* -----------------------------------------
+   Post Form (Create Post)
+------------------------------------------ */
+.post-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 15px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  max-width: 420px;
+  margin: 0 auto;
+}
+
+.form-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  text-align: center;
+  color: var(--text-dark);
+}
+
+.post-form textarea {
+  width: 100%;
+  min-height: 80px;
+  resize: none;
+  margin-bottom: 0.7rem;
+  padding: 0.6rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 0.95rem;
+}
+
+.post-form input[type="text"] {
+  width: 100%;
+  padding: 0.6rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  margin-bottom: 0.6rem;
+  font-size: 0.9rem;
+}
+
+/* Image URL Button (Use URL) */
+.post-form button[type="button"] {
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.post-form button[type="button"]:hover {
+  background-color: #007ee5;
+}
+
+/* File Upload Button */
+.file-label {
+  display: inline-block;
+  background-color: var(--primary);
+  color: white;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  margin: 0.6rem 0;
+  text-align: center;
+  transition: 0.3s;
+  font-weight: 500;
+}
+
+.file-label:hover {
+  background-color: #0d8de1;
+}
+
+.file-label input {
+  display: none;
+}
+
+/* Image Preview */
+.image-preview {
+  width: 100%;
+  margin: 0.5rem 0;
+  display: flex;
+  justify-content: center;
+}
+
+.image-preview img {
+  width: 100%;
+  max-height: 360px;
+  border-radius: 10px;
+  object-fit: contain;
+  background: #fafafa;
+}
+
+/* Post Button */
+.form-buttons {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 0.8rem;
+}
+
+.post-btn {
+  background-color: var(--secondary);
+  color: white;
+  border: none;
+  padding: 0.7rem 2rem;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.post-btn:hover {
+  background-color: #10a45c;
+}
+
+/* -----------------------------------------
+   Post Wall (Feed)
+------------------------------------------ */
+.post-wall {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.post-wall h2 {
+  text-align: center;
+  margin-bottom: 0.5rem;
+  color: var(--text-dark);
+}
+
+/* Post Card */
+.social-post {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.post-header {
+  display: flex;
+  align-items: center;
+}
+
+.profile-pic {
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.post-meta {
+  display: flex;
+  flex-direction: column;
+}
+
+.username {
+  font-weight: bold;
+  color: var(--text-dark);
+}
+
+.timestamp {
+  color: var(--text-light);
+  font-size: 0.8rem;
+}
+
+/* Post Body */
+.post-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.post-text {
+  width: 100%;
+  text-align: left;
+  margin-bottom: 0.5rem;
+  color: var(--text-dark);
+  font-size: 0.95rem;
+}
+
+/* Image inside Post */
+.post-image-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background: #fafafa;
+  border-radius: 10px;
+  padding: 0.3rem 0;
+}
+
+.post-image {
+  width: 100%;
+  max-height: 360px;
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+/* Post Actions */
+.post-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.5rem;
+  font-weight: bold;
+}
+
+.post-actions button {
+  background: none;
+  border: none;
+  color: var(--primary);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.post-actions button:hover {
+  color: var(--accent);
+}
+
+/* -----------------------------------------
+   Comments Section
+------------------------------------------ */
+.comment-section {
+  border-top: 1px solid var(--border);
+  margin-top: 0.5rem;
+  padding-top: 0.5rem;
+}
+
+.comment-form {
+  display: flex;
+  gap: 0.4rem;
+  margin-bottom: 0.5rem;
+}
+
+.comment-form input {
+  flex: 1;
+  padding: 0.45rem;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  font-size: 0.9rem;
+}
+
+.comment-form button {
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  padding: 0.45rem 0.8rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.comment-form button:hover {
+  background-color: #007ee5;
+}
+
+.comment-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.comment-item {
+  background: #f4f6f8;
+  padding: 0.4rem 0.6rem;
+  border-radius: 6px;
+  margin-bottom: 0.4rem;
+  font-size: 0.9rem;
+  color: var(--text-dark);
+}
+
+.no-comments {
+  color: var(--text-light);
+  font-size: 0.85rem;
+  text-align: left;
+}
+
+/* -----------------------------------------
+   Responsive Adjustments
+------------------------------------------ */
+@media (max-width: 768px) {
+  .app-box {
+    max-width: 90%;
+    min-height: 85vh;
+  }
+
+  .post-form {
+    max-width: 100%;
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .app-box {
+    max-width: 95%;
+    min-height: 90vh;
+  }
+
+  .post-form {
+    padding: 1rem;
+  }
+
+  .app-header h1 {
+    font-size: 1.1rem;
+  }
+}
