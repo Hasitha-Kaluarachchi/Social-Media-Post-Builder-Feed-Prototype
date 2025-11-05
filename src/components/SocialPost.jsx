@@ -18,15 +18,18 @@ const SocialPost = ({ post }) => {
         <div className="avatar"></div>
         <div className="user-details">
           <strong>Anonymous User</strong>
+          <br></br>
           <small>{post.time}</small>
         </div>
       </div>
+
+      <p className="post-text">{post.text}</p>
 
       {post.image && (
         <img src={post.image} alt="post" className="post-image" />
       )}
 
-      <p className="post-text">{post.text}</p>
+      
 
       <div className="post-actions">
         <button onClick={() => setLikes(likes + 1)}>❤️ {likes}</button>
