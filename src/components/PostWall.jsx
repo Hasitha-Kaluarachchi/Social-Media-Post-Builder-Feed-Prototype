@@ -1,26 +1,21 @@
 import React from "react";
 import SocialPost from "./SocialPost";
 
-function PostWall({ posts }) {
+const PostWall = ({ posts, onGoBack }) => {
   return (
     <div className="post-wall">
-      <h2>📰 Latest Posts</h2>
-      {posts.length === 0 ? (
-        <p>No posts yet. Create one!</p>
+      <h2>My Wall ✍️</h2>
+      <button className="back-btn" onClick={onGoBack}>
+        ⬅️ Create New Post
+      </button>
+
+      {posts.length > 0 ? (
+        posts.map((post) => <SocialPost key={post.id} post={post} />)
       ) : (
-        posts.map((post, index) => (
-          <SocialPost
-            key={index}
-            text={post.text}
-            image={post.image}
-            likes={post.likes}
-            comments={post.comments}
-            timestamp={post.timestamp}
-          />
-        ))
+        <p>No posts yet.</p>
       )}
     </div>
   );
-}
+};
 
 export default PostWall;
