@@ -24,7 +24,8 @@ const PostForm = ({ onAddPost }) => {
       image: imageURL || localImage,
       likes: 0,
       comments: 0,
-      time: new Date().toLocaleString(),
+      time: new Date().toLocaleString([], { hour: '2-digit', minute: '2-digit', hour12: true }),
+
     };
 
     onAddPost(newPost);
