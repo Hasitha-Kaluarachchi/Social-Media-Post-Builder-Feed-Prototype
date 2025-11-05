@@ -17,7 +17,7 @@ const App = () => {
   return (
     <div className="app">
       <header className="header">
-        <h1>🏠 Wall Page</h1>
+        
         <nav>
           <button onClick={() => setShowWall(false)}>Create Post</button>
           <button onClick={() => setShowWall(true)}>View Wall</button>
