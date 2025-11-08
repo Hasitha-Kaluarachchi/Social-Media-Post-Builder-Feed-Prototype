@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 function SocialPost({ text, image, likes = 0, comments = 0, timestamp }) {
   const [likeCount, setLikeCount] = useState(likes);
-  const [commentList, setCommentList] = useState([]); // comments created locally
+  const [commentList, setCommentList] = useState([]); // comments created locally 
   const [showComments, setShowComments] = useState(false);
   const [newComment, setNewComment] = useState("");
 
@@ -77,5 +77,5 @@ function SocialPost({ text, image, likes = 0, comments = 0, timestamp }) {
     </div>
   );
 }
-
+// social post
 export default SocialPost;

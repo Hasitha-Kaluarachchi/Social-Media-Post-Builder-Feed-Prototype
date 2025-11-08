@@ -22,5 +22,5 @@ function PostWall({ posts }) {
     </div>
   );
 }
-
+// postwall 
 export default PostWall;

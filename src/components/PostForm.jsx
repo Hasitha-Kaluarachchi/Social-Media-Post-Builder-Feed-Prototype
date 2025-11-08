@@ -6,7 +6,7 @@ function PostForm({ onAddPost }) {
   const [preview, setPreview] = useState("");
   const [urlInput, setUrlInput] = useState("");
 
-  // 🟢 Handle local image upload
+  // 🟢 local image upload
   const handleImageUpload = (e) => {
     const file = e.target.files[0];
     if (!file) return;
