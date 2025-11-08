@@ -1,34 +1,24 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 const SocialPost = ({ post }) => {
   const [likes, setLikes] = useState(post.likes);
   const [comment, setComment] = useState("");
   const [comments, setComments] = useState([]);
   const [showAllComments, setShowAllComments] = useState(false);
-  const [avatar, setAvatar] = useState("");
 
-  // Generate random avatar on mount
-  useEffect(() => {
-    const randomId = Math.floor(Math.random() * 70) + 1;
-    setAvatar(`https://i.pravatar.cc/150?img=${randomId}`);
-  }, []);
-
-  // Add new comment
   const handleAddComment = () => {
     if (comment.trim()) {
-      setComments([comment, ...comments]); // newest first
+      // Add newest comment first
+      setComments([comment, ...comments]);
       setComment("");
-      setShowAllComments(false); // keep hidden initially
     }
   };
 
-  const handleKeyPress = (e) => {
-    if (e.key === "Enter") handleAddComment();
+  const toggleComments = () => {
+    setShowAllComments(!showAllComments);
   };
 
-  const toggleComments = () => setShowAllComments(!showAllComments);
-
-  // Show only 3 comments unless expanded
+  // Show only top 3 comments unless expanded
   const visibleComments = showAllComments ? comments : comments.slice(0, 3);
 
   return (
@@ -44,11 +34,15 @@ const SocialPost = ({ post }) => {
 
       <p className="post-text">{post.text}</p>
 
-      {post.image && <img src={post.image} alt="post" className="post-image" />}
+      {post.image && (
+        <img src={post.image} alt="post" className="post-image" />
+      )}
 
       <div className="post-actions">
         <button onClick={() => setLikes(likes + 1)}>❤️ {likes}</button>
-        <button onClick={toggleComments}>💬 {comments.length}</button>
+        <button onClick={toggleComments}>
+          💬 {comments.length} {showAllComments ? "▲" : "▼"}
+        </button>
       </div>
 
       {/* Comment Input */}
@@ -58,7 +52,6 @@ const SocialPost = ({ post }) => {
           placeholder="Write a comment..."
           value={comment}
           onChange={(e) => setComment(e.target.value)}
-          onKeyPress={handleKeyPress}
         />
         <button onClick={handleAddComment}>➤</button>
       </div>
@@ -69,11 +62,8 @@ const SocialPost = ({ post }) => {
           {visibleComments.map((c, i) => (
             <li key={i}>{c}</li>
           ))}
-
           {!showAllComments && comments.length > 3 && (
-            <li className="more-comments" onClick={toggleComments} style={{ cursor: "pointer" }}>
-              View all {comments.length} comments...
-            </li>
+            <li className="more-comments">View all {comments.length} comments...</li>
           )}
         </ul>
       )}
@@ -82,3 +72,5 @@ const SocialPost = ({ post }) => {
 };
 
 export default SocialPost;
+
+

@@ -70,3 +70,4 @@ const PostForm = ({ onAddPost }) => {
 };
 
 export default PostForm;
+
