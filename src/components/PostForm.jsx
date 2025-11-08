@@ -23,8 +23,9 @@ const PostForm = ({ onAddPost }) => {
       text,
       image: imageURL || localImage,
       likes: 0,
-      comments: [],
-      time: new Date().toLocaleString([], { hour: "2-digit", minute: "2-digit", hour12: true }),
+      comments: 0,
+      time: new Date().toLocaleString([], { hour: '2-digit', minute: '2-digit', hour12: true }),
+
     };
 
     onAddPost(newPost);
@@ -55,9 +56,13 @@ const PostForm = ({ onAddPost }) => {
         />
       </div>
 
-      {(localImage || imageURL) && (
-        <img src={imageURL || localImage} alt="preview" className="preview-image" />
-      )}
+      {localImage || imageURL ? (
+        <img
+          src={imageURL || localImage}
+          alt="preview"
+          className="preview-image"
+        />
+      ) : null}
 
       <button onClick={handleSubmit}>Post 💬</button>
     </div>

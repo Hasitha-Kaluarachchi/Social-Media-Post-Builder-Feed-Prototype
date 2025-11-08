@@ -12,9 +12,12 @@ const App = () => {
     setShowWall(true);
   };
 
+  const handleGoBack = () => setShowWall(false);
+
   return (
     <div className="app">
       <header className="header">
+        
         <nav>
           <button onClick={() => setShowWall(false)}>Create Post</button>
           <button onClick={() => setShowWall(true)}>View Wall</button>
@@ -25,7 +28,7 @@ const App = () => {
         {!showWall ? (
           <PostForm onAddPost={handleAddPost} />
         ) : (
-          <PostWall posts={posts} onGoBack={() => setShowWall(false)} />
+          <PostWall posts={posts} onGoBack={handleGoBack} />
         )}
       </main>
     </div>
