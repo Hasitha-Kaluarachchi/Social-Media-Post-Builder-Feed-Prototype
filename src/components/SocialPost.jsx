@@ -34,9 +34,7 @@ const SocialPost = ({ post }) => {
   return (
     <div className="social-post">
       <div className="post-header">
-        <div className="avatar">
-          <img src={avatar} alt="avatar" style={{ width: "100%", borderRadius: "50%" }} />
-        </div>
+        <div className="avatar"></div>
         <div className="user-details">
           <strong>Anonymous User</strong>
           <br />

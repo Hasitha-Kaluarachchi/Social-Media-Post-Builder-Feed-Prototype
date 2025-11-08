@@ -14,5 +14,5 @@ body {
   color: var(--text-main);
   font-family: "Segoe UI", Roboto, Arial, sans-serif;
   margin: 0;
-  overflow-x: hidden;
+  overflow-x: hidden; /* prevent horizontal scroll */ 
 }
