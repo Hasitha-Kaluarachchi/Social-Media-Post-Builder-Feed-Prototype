@@ -178,13 +178,12 @@ body {
   gap: 20px;
   width: 100%;
   padding: 10px 0;
+  flex-direction: column;
 }
 
 /* Each post wrapper */
 .post-wrapper {
   flex: 1 1 300px;
-  max-width: 500px;
-  min-width: 280px;
   display: flex;
   flex-direction: column;
 }
@@ -357,7 +356,7 @@ body {
     height: 50px;
   }
   .post-actions button {
-    padding: 8px 15px;
+    padding: 5px 10px;
     font-size: 1rem;
   }
   .post-wrapper {
