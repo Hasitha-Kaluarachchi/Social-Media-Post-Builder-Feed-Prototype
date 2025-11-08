@@ -15,7 +15,12 @@ const SocialPost = ({ post }) => {
   return (
     <div className="social-post">
       <div className="post-header">
-        <div className="avatar"></div>
+        <img
+        src="https://img.icons8.com/fluent/1200/user-male-circle.jpg"
+        alt="User Avatar"
+        className="avatar"
+        />
+
         <div className="user-details">
           <strong>Anonymous User</strong>
           <br></br>
