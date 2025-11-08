@@ -202,7 +202,7 @@ body {
 
 .social-post {
   width: 100%;
-  background: #fff;
+  background: var(--card-bg);
   border-radius: 18px;
   padding: 25px;
   margin-bottom: 25px;
@@ -218,19 +218,19 @@ body {
 .avatar {
   width: 55px;
   height: 55px;
-  background: #97b6f4;
+  background: var(--secondary);
   border-radius: 50%;
   margin-right: 15px;
 }
 
 .user-details strong {
   font-size: 1.1rem;
-  color: #333;
+  color: var(--text-main);
 }
 
 .user-details small {
   font-size: 0.9rem;
-  color: #666;
+  color: var(--text-light);
 }
 
 .post-image {
@@ -242,7 +242,7 @@ body {
 
 .post-text {
   font-size: 1.1rem;
-  color: #444;
+  color: var(--text-main);
   margin-top: 10px;
 }
 
@@ -253,7 +253,7 @@ body {
 }
 
 .post-actions button {
-  background: #007bff;
+  background: var(--primary);
   color: white;
   border: none;
   padding: 10px 20px;
@@ -264,7 +264,7 @@ body {
 }
 
 .post-actions button:hover {
-  background: #005dc1;
+  background: #0b7cd5;
 }
 
 /* Comment section */
@@ -277,14 +277,14 @@ body {
 
 .comment-section input {
   flex: 1;
-  border: 1px solid #ccc;
+  border: 1px solid var(--border);
   border-radius: 25px;
   padding: 10px 15px;
   font-size: 1rem;
 }
 
 .comment-section button {
-  background: #007bff;
+  background: var(--primary);
   color: white;
   border: none;
   border-radius: 50%;
@@ -296,15 +296,29 @@ body {
 }
 
 .comment-section button:hover {
-  background: #005dc1;
+  background: #0b7cd5;
 }
 
 .comment-list {
   margin-top: 15px;
   padding-left: 20px;
   list-style: none;
-  color: #333;
+  color: var(--text-main);
   font-size: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.more-comments {
+  color: var(--primary);
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.more-comments:hover {
+  text-decoration: underline;
 }
 
 /* Mobile Responsive  */
