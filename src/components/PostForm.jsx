@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { addPost } from "../api/api";
 
 const PostForm = ({ onAddPost }) => {
   const [text, setText] = useState("");
@@ -14,21 +15,25 @@ const PostForm = ({ onAddPost }) => {
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (!text.trim() && !imageURL && !localImage) return;
 
     const newPost = {
-      id: Date.now(),
       text,
-      image: imageURL || localImage,
+      image: localImage || imageURL,
       likes: 0,
-      comments: 0,
-      time: new Date().toLocaleString([], { hour: '2-digit', minute: '2-digit', hour12: true }),
-
+      comments: [],
+      time: new Date().toLocaleString([], {
+        hour: "2-digit",
+        minute: "2-digit",
+        hour12: true,
+      }),
     };
 
-    onAddPost(newPost);
+    const createdPost = await addPost(newPost);
+    onAddPost(createdPost);
+
     setText("");
     setImageURL("");
     setLocalImage(null);
@@ -56,13 +61,13 @@ const PostForm = ({ onAddPost }) => {
         />
       </div>
 
-      {localImage || imageURL ? (
+      {(localImage || imageURL) && (
         <img
-          src={imageURL || localImage}
+          src={localImage || imageURL}
           alt="preview"
           className="preview-image"
         />
-      ) : null}
+      )}
 
       <button onClick={handleSubmit}>Post 💬</button>
     </div>

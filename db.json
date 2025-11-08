@@ -1,0 +1,11 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "text": "Welcome to the Social Wall!",
+      "image": "https://placekitten.com/500/300",
+      "likes": 2,
+      "comments": ["Nice post!", "Welcome 👋"]
+    }
+  ]
+}
