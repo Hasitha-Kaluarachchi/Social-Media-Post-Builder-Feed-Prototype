@@ -42,21 +42,24 @@ body {
   box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15);
 }
 
-.header h1 {
-  font-size: 2rem; /* larger title */
-  color: #333;
+.header {
+  background: linear-gradient(90deg, #84d9d2, #97b6f4);
+  padding: 25px 0;
+  display: flex;
+  justify-content: center; /* Centers nav buttons */
+  align-items: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .header nav {
   display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
+  gap: 25px;
 }
 
 .header nav button {
-  background: #ffffff;
-  border: none;
+  background: #fff;
   color: #333;
+  border: none;
   padding: 12px 24px;
   border-radius: 10px;
   font-weight: 600;
@@ -67,6 +70,7 @@ body {
 
 .header nav button:hover {
   background: #e5f3ff;
+  transform: scale(1.05);
 }
 
 /* Main content */
@@ -140,12 +144,13 @@ body {
 }
 
 /* Preview image */
-.preview-image {
+.post-image, .preview-image {
   width: 100%;
-  border-radius: 12px;
+  border-radius: 14px;
   margin: 15px 0;
   object-fit: cover;
 }
+
 
 /* Post button */
 .post-form button {
@@ -301,7 +306,22 @@ body {
   list-style: none;
   color: #333;
   font-size: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
+
+.more-comments {
+  color: #007bff;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.more-comments:hover {
+  text-decoration: underline;
+}
+
 
 /* 📱 Responsive Design */
 @media (max-width: 1024px) {
