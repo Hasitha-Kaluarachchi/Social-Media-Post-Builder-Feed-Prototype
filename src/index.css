@@ -15,3 +15,15 @@ body {
   font-family: "Segoe UI", Roboto, Arial, sans-serif;
   margin: 0;
 }
+
+.post-form,
+.social-post {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 15px;
+  padding: 25px;
+  margin-bottom: 20px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+

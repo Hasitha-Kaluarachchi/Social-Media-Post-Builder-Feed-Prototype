@@ -8,8 +8,7 @@
 html, body {
   width: 100%;
   height: 100%;
-  overflow-x: hidden; /* stop sideways scroll */
-  font-size: 18px; /* overall base font size increased */
+  overflow-x: hidden;
 }
 
 body {

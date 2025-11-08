@@ -4,6 +4,7 @@ import SocialPost from "./SocialPost";
 const PostWall = ({ posts, onGoBack }) => {
   return (
     <div className="post-wall">
+      <button className="back-btn" onClick={onGoBack}>⬅ Back</button>
       {posts.length > 0 ? (
         posts.map((post) => <SocialPost key={post.id} post={post} />)
       ) : (
@@ -14,4 +15,5 @@ const PostWall = ({ posts, onGoBack }) => {
 };
 
 export default PostWall;
+
 

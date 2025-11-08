@@ -3,22 +3,20 @@ import React, { useState, useEffect } from "react";
 const SocialPost = ({ post }) => {
   const [likes, setLikes] = useState(post.likes);
   const [comment, setComment] = useState("");
-  const [comments, setComments] = useState([]);
+  const [comments, setComments] = useState(post.comments || []);
   const [showAllComments, setShowAllComments] = useState(false);
   const [avatar, setAvatar] = useState("");
 
-  // Generate random avatar on mount
   useEffect(() => {
     const randomId = Math.floor(Math.random() * 70) + 1;
     setAvatar(`https://i.pravatar.cc/150?img=${randomId}`);
   }, []);
 
-  // Add new comment
   const handleAddComment = () => {
     if (comment.trim()) {
-      setComments([comment, ...comments]); // newest first
+      setComments([comment, ...comments]);
       setComment("");
-      setShowAllComments(false); // keep hidden initially
+      setShowAllComments(false);
     }
   };
 
@@ -28,7 +26,6 @@ const SocialPost = ({ post }) => {
 
   const toggleComments = () => setShowAllComments(!showAllComments);
 
-  // Show only 3 comments unless expanded
   const visibleComments = showAllComments ? comments : comments.slice(0, 3);
 
   return (
@@ -53,7 +50,6 @@ const SocialPost = ({ post }) => {
         <button onClick={toggleComments}>💬 {comments.length}</button>
       </div>
 
-      {/* Comment Input */}
       <div className="comment-section">
         <input
           type="text"
@@ -65,15 +61,13 @@ const SocialPost = ({ post }) => {
         <button onClick={handleAddComment}>➤</button>
       </div>
 
-      {/* Comment List */}
       {comments.length > 0 && (
         <ul className="comment-list">
           {visibleComments.map((c, i) => (
             <li key={i}>{c}</li>
           ))}
-
           {!showAllComments && comments.length > 3 && (
-            <li className="more-comments" onClick={toggleComments} style={{ cursor: "pointer" }}>
+            <li className="more-comments" onClick={toggleComments}>
               View all {comments.length} comments...
             </li>
           )}

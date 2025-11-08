@@ -25,7 +25,7 @@ const App = () => {
         {!showWall ? (
           <PostForm onAddPost={handleAddPost} />
         ) : (
-          <PostWall posts={posts} />
+          <PostWall posts={posts} onGoBack={() => setShowWall(false)} />
         )}
       </main>
     </div>
